@@ -283,6 +283,7 @@ def train(rank, args):
 
     epoch_size = len(dataset) // args.batch_size // args.num_gpus
     num_epochs = math.ceil(cfg.max_iter / epoch_size)
+    num_epochs = 80
     
     # Which learning rate adjustment step are we on? lr' = lr * gamma ^ step_index
     step_index = 0
