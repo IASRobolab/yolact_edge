@@ -2,11 +2,11 @@
 from distutils.extension import Extension
 from Cython.Distutils import build_ext
 from setuptools import setup, find_packages
-
+import numpy
 
 cmdclass = {}
 cmdclass.update({'build_ext': build_ext})
-ext_modules = [Extension("cython_nms", ["yolact_edge/utils/cython_nms.pyx"])]
+ext_modules = [Extension("cython_nms", ["yolact_edge/utils/cython_nms.pyx"], include_dirs=[numpy.get_include()])]
 for e in ext_modules:
     e.cython_directives = {'language_level': "3"}
 
