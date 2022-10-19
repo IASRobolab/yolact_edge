@@ -231,6 +231,14 @@ youtube_vis_dataset = dataset_base.copy({
 })
 
 
+box_penv_plenv_AI4M = dataset_base.copy({
+  'name': 'BOXES',
+  'train_info': '/home/azunino/Documents/Data/Robotic_Arms/R4M_Mar22/annots_not_overlap/trainval.json',
+  'train_images': '/home/azunino/Documents/Data/Robotic_Arms/R4M_Mar22/rgb_HD/',
+  'valid_info': '/home/azunino/Documents/Data/Robotic_Arms/R4M_Mar22/annots_not_overlap/trainval.json',
+  'valid_images': '/home/azunino/Documents/Data/Robotic_Arms/R4M_Mar22/rgb_HD/',
+  'class_names': ('box','penv','plenv'),
+})
 
 
 
@@ -939,6 +947,18 @@ yolact_edge_youtubevis_resnet50_config = yolact_edge_youtubevis_config.copy({
     'name': 'yolact_edge_youtubevis_resnet50',
     'backbone': yolact_resnet50_config.backbone
 })
+
+yolact_edge_resnet50_box_penv_plenv_AI4M_config = yolact_resnet50_config.copy({
+    'name': 'yolact_edge_resnet50_box_penv_plenv_AI4M',
+    # Dataset stuff
+    'dataset': box_penv_plenv_AI4M,
+    'num_classes': len(box_penv_plenv_AI4M.class_names) + 1,
+
+})
+
+
+
+
 
 # Default config
 cfg = yolact_edge_config.copy()
