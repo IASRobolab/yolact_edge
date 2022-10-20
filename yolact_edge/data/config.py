@@ -948,7 +948,7 @@ yolact_edge_youtubevis_resnet50_config = yolact_edge_youtubevis_config.copy({
     'backbone': yolact_resnet50_config.backbone
 })
 
-yolact_edge_resnet50_box_penv_plenv_AI4M_config = yolact_resnet50_config.copy({
+yolact_edge_resnet50_box_penv_plenv_AI4M_config = yolact_edge_resnet50_config.copy({
     'name': 'yolact_edge_resnet50_box_penv_plenv_AI4M',
     # Dataset stuff
     'dataset': box_penv_plenv_AI4M,
