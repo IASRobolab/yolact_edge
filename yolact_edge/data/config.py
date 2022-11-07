@@ -967,7 +967,7 @@ yolact_edge_resnet50_box_penv_plenv_AI4M_config = yolact_edge_resnet50_config.co
 
 
 yolact_edge_resnet50_adesubset_classes_config = yolact_edge_resnet50_config.copy({
-    'name': 'yolact_edge_resnet50_adesubset_classes_config',
+    'name': 'yolact_edge_resnet50_adesubset_classes',
     # Dataset stuff
     'dataset': ADE20_subset,
     'num_classes': len(ADE20_subset.class_names) + 1,
