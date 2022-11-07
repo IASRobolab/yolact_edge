@@ -241,6 +241,15 @@ box_penv_plenv_AI4M = dataset_base.copy({
 })
 
 
+ADE20_subset= dataset_base.copy({
+  'name': 'ADE_subset',
+  'train_info': '/home/azunino/Documents/ADE_toolkit/train_9_classes.json',
+  'train_images': '/home/azunino/Documents/Data/ADEChallengeData2016/images/training',
+  'valid_info': '/home/azunino/Documents/ADE_toolkit/val_9_classes.json',
+  'valid_images': '/home/azunino/Documents/Data/ADEChallengeData2016/images/validation', 
+  'class_names': ('cabinet', 'person', 'door', 'table', 'chair', 'box', 'computer', 'bottle', 'bag'),
+  'label_map': { 10:  1,  12:  2,  14:  3,  15:  4,   19:  5,  41:  6,  74:  7,  98:  8,  115:  9}
+})
 
 
 # ----------------------- TRANSFORMS ----------------------- #
@@ -957,7 +966,13 @@ yolact_edge_resnet50_box_penv_plenv_AI4M_config = yolact_edge_resnet50_config.co
 })
 
 
+yolact_edge_resnet50_adesubset_classes_config = yolact_edge_resnet50_config.copy({
+    'name': 'yolact_edge_resnet50_adesubset_classes_config',
+    # Dataset stuff
+    'dataset': ADE20_subset,
+    'num_classes': len(ADE20_subset.class_names) + 1,
 
+})
 
 
 # Default config
